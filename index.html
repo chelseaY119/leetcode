@@ -17,5 +17,36 @@
          4. Use a for loop to loop through w1 and w2 respectively and append them into the stringbuilder obj.
          5. Append the extra characters (if any) to the end of the stringbuilder obj.
          6. Convert the stringbuilder to string and return it.  </p>
+
+         <br>
+
+         <h4>1071. Find GDC of two strings</h4>
+         <ol>
+            <li>
+                1.Check if two strings have same part of substrings by adding them together in two directions.
+                If they have different content (such as "LEET" and "CODE"), the resulted strings will be different.
+
+            </li>
+            <li>
+                2. If they are the same, means that str1 and str2 share same content. 
+                Therefore, we should find a gcd number of both strings. The substrings of 
+                string from index 0 to index gcd will be the resulted gdc string.
+            </li>
+
+            <li>
+                3. When calculating gcd, we first by dividing str1 length by str 2 length to find the reminder. 
+                if reminder is 0, means that the divider is the gcd of these two length numbers.
+            </li>
+
+            <li>
+                4. If the reminder is not zero, we should treat the divider as the new dividend and divide by the 
+                the reminder.
+            </li>
+
+            <li>
+                5. We use a while loop for gcd calculation until we get a reminder equals to zero. After that, we can get the 
+                substring with length = gcd.
+            </li>
+         </ol>
     </body>
 </html>
