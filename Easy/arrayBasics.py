@@ -74,8 +74,3 @@ class sortedSquares:
             k -= 1
 
         return result
-
-
-ss = sortedSquares()
-result = ss.solution([-4, -3, 0, 3, 10])
-print(result)
