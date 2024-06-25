@@ -52,18 +52,35 @@ class removeElement(object):
         return head
 
 
+# no.203 solution with dummy head
+class removeElement2(object):
+    def solution(self, head, val):
+        dummy = Node(0)
+        dummy.next = head
+        pre = dummy
+        next = head
+
+        while next != None:
+            if next.val == val:
+                pre.next = next.next
+            else:
+                pre = next
+            next = next.next
+
+        return dummy.next
+
+
 # Create a linked list and append some nodes
 ll = LinkedList()
 ll.append(1)
+ll.append(2)
+ll.append(2)
 ll.append(1)
-ll.append(2)
-ll.append(2)
-ll.append(3)
-ll.append(4)
 
-re = removeElement()
+re = removeElement2()
 s = re.solution(ll.head, 1)
 
 # Print the linked list
 print("\nresult printed")
+
 ll.print_list()
