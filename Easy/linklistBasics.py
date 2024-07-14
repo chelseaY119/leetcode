@@ -70,6 +70,20 @@ class removeElement2(object):
         return dummy.next
 
 
+class reverseLinkedlist(object):
+    def solution(self, head):
+        cur = head
+        pre = None
+        temp = None
+        while cur != None:
+            temp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = temp
+
+        return pre
+
+
 # Create a linked list and append some nodes
 ll = LinkedList()
 ll.append(1)
