@@ -97,3 +97,30 @@ class swapNodes(object):
             cur = first
 
         return dummy.next
+
+
+# no 19 remove nth node from end of list
+class removeNNode(object):
+    def solution(self, head, n):
+        # use a dummy head that point to real head node
+        dummy = Node(0)
+        dummy.next = head
+        slow = dummy
+        fast = slow
+
+        while n >= 0:
+            fast = fast.next
+            n -= 1
+
+        while fast:
+            slow = slow.next
+            fast = fast.next
+        if slow.next == None:
+            slow.next = fast
+        else:
+            slow.next = slow.next.next
+
+        return dummy.next
+
+
+# no.142 circular linkedlist

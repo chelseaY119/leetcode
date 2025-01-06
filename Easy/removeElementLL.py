@@ -68,33 +68,3 @@ class removeElement2(object):
             next = next.next
 
         return dummy.next
-
-
-class reverseLinkedlist(object):
-    def solution(self, head):
-        cur = head
-        pre = None
-        temp = None
-        while cur != None:
-            temp = cur.next
-            cur.next = pre
-            pre = cur
-            cur = temp
-
-        return pre
-
-
-# Create a linked list and append some nodes
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(2)
-ll.append(1)
-
-re = removeElement2()
-s = re.solution(ll.head, 1)
-
-# Print the linked list
-print("\nresult printed")
-
-ll.print_list()
