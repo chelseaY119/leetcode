@@ -4,7 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-
+        if len(nums) < 3:
+            return False
+            
         small = float('inf') #smallest number
         middle = float('inf') # second smallest number
 
