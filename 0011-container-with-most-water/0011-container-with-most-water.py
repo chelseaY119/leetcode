@@ -7,12 +7,11 @@ class Solution(object):
 
         i = 0 # the left pointer
         n = len(height)
-        j = n - 1
+        j = n - 1 # right pointer
         max_area = 0
 
         while i < j:
-            k = min(height[i], height[j])
-            area = k * (j - i)
+            area = min(height[i], height[j]) * (j - i)
             max_area = max(max_area, area)
 
             if height[i] > height[j]:
