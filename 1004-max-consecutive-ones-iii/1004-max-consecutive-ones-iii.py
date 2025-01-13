@@ -9,8 +9,9 @@ class Solution(object):
         left = 0
         max_consecutive = 0
         zeros = 0
+        n = len(nums)
 
-        for right in range(len(nums)):
+        for right in range(n):
             if nums[right] == 0:
                 zeros += 1
             
