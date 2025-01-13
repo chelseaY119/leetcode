@@ -10,7 +10,7 @@ class Solution(object):
         n = len(gain)
 
         for i in range(n):
-            current_alt = current_alt + gain[i]
+            current_alt += gain[i]
             highest_alt = max (highest_alt, current_alt)
         
         return highest_alt
