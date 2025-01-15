@@ -22,4 +22,7 @@ class Solution(object):
         if set(word1_map.keys()) != set(word2_map.keys()):
             return False
         
+        if sorted(word1_map.values()) != sorted(word2_map.values()):
+            return False
+        
         return True
