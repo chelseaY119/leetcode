@@ -8,22 +8,21 @@ class Solution(object):
         map_row = {}
         map_col = {}
 
-        n = len(grid)
+        for r in grid:
+            rc = tuple(r)
+            map_row[rc] = map_row.get(rc, 0) + 1
+        
 
-        for row in range(n):
-            map_row[row] = tuple(grid[row])
-
-        for col in range(n):
-            map_col[col] = tuple(grid[row][col] for row in range(n))
+        for c in zip(*grid):
+            map_col[c] = map_col.get(c, 0) + 1
 
         count = 0
 
-        for row in map_row.values():
-            for col in map_col.values():
-                if row == col:
-                    count += 1
-        
+        for tpl in map_row:
+            if tpl in map_col:
+                count += map_row[tpl] * map_col[tpl]
 
+        
         return count
         
 
