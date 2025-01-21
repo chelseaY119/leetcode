@@ -11,7 +11,7 @@ class Solution(object):
 
         for char in s:
             if char.isdigit(): # found the repeat number
-                num = int(char) # convert char to number
+                num = num*10 + int(char) # convert char to number
             elif char == "[":
                 stack.append((string, num)) # store number and string onto stack
                 num = 0
