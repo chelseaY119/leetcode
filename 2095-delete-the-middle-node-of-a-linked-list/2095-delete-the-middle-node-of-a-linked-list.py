@@ -21,9 +21,8 @@ class Solution(object):
             prev = slow # move the prev node to slow
             slow = slow.next # move slow node by 1
             fast = fast.next.next # move fast node by 2
-        
-        if prev:
-            prev.next = slow.next
+
+        prev.next = slow.next
 
         return head 
     
