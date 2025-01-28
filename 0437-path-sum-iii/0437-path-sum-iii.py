@@ -11,7 +11,6 @@ class Solution(object):
         :type targetSum: int
         :rtype: int
         """
-
         def count_path_from_node(node, targetSum):
             if not node:
                 return 0
@@ -26,11 +25,7 @@ class Solution(object):
         if not root:
             return 0
         
-        count = count_path_from_node(root, targetSum)
-        count += self.pathSum(root.left, targetSum)
-        count += self.pathSum(root.right, targetSum)
-        
-        return count
+        return count_path_from_node(root, targetSum) + self.pathSum(root.left, targetSum) + self.pathSum(root.right, targetSum)
             
 
 
