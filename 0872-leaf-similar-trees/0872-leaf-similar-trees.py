@@ -24,10 +24,8 @@ class Solution(object):
             # comtinue find the leaf for the root
             return get_leaves(root.left) + get_leaves(root.right)
         
-        leave1 = get_leaves(root1)
-        leave2 = get_leaves(root2)
 
-        return leave1 == leave2
+        return get_leaves(root1) == get_leaves(root2)
             
         
 
