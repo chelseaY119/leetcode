@@ -25,13 +25,10 @@ class Solution(object):
                 return root.left
 
             # both child 
-            min_node = self.helper(root.right)
-            root.val = min_node.val
-            root.right = self.deleteNode(root.right, min_node.val)
+            cur = root.right
+            while cur.left:
+                cur = cur.left
+            root.val = cur.val
+            root.right = self.deleteNode(root.right, cur.val)
         return root
 
-    # helper node for finding the smaller node on the right side, so it can be replaced with the deleted node
-    def helper(self, root):
-        while root.left:
-            root = root.left
-        return root
